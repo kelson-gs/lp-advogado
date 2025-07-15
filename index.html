@@ -12,6 +12,11 @@
     <header class="hero-parallax-section">
         <div class="navbar">
             <div class="logo">Dr(a). Renata Almeida</div>
+            
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span class="menu-icon">☰</span>
+              </button>
+
             <ul class="nav-links">
                 <li><a href="#about-lawyer">Sobre Mim</a></li>
                 <li><a href="#differentiators">Diferenciais</a></li>
@@ -120,7 +125,7 @@
                 <div class="testimonial-slide active" data-background-color="#363236">
                     <p>"O Dr(a). [Seu Nome] transformou a forma como lidamos com a LGPD em nossa empresa. Profissionalismo e clareza impecáveis!"</p>
                     <div class="client-info">
-                        <img src="https://via.placeholder.com/80x80/ffffff/000000?text=C1" alt="Cliente 1">
+                        <img src="https://res.cloudinary.com/dup3eggmc/image/upload/v1752611142/adv-wom1_exl6ck.jpg" alt="Cliente 1">
                         <div>
                             <h4>Ana Paula M.</h4>
                             <span>CEO, Tech Solutions</span>
@@ -130,7 +135,7 @@
                 <div class="testimonial-slide" data-background-color="#2A4A6A">
                     <p>"Fui surpreendido(a) pela abordagem estratégica e assertividade. O resultado superou todas as expectativas. Recomendo fortemente!"</p>
                     <div class="client-info">
-                        <img src="https://via.placeholder.com/80x80/ffffff/000000?text=C2" alt="Cliente 2">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D22AQE3TB-WpioCdw/feedshare-shrink_800/feedshare-shrink_800/0/1598962394300?e=2147483647&v=beta&t=m6OLJmH1FafuA8mVvAzZkLuz0BaZ2TOqByzU4hKwT_E" alt="Cliente 2">
                         <div>
                             <h4>Carlos R.</h4>
                             <span>Empreendedor</span>
@@ -140,7 +145,7 @@
                 <div class="testimonial-slide" data-background-color="#D4AF37">
                     <p>"Em um processo delicado, tive todo o apoio e a segurança jurídica. A comunicação foi excelente e os prazos cumpridos rigorosamente."</p>
                     <div class="client-info">
-                        <img src="https://via.placeholder.com/80x80/ffffff/000000?text=C3" alt="Cliente 3">
+                        <img src="https://res.cloudinary.com/dup3eggmc/image/upload/v1752611204/adv-wom2_enhfqx.jpg" alt="Cliente 3">
                         <div>
                             <h4>Fernanda L.</h4>
                             <span>Consultora</span>
@@ -266,6 +271,22 @@
 
         // Initial load for testimonial slider
         showSlide(currentSlide);
+
+        // Efect Menu Responsive
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = document.querySelector('.menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            // Alterna ícone ☰ ↔ ✕
+            if (navLinks.classList.contains('active')) {
+            menuIcon.textContent = '✕';
+            } else {
+            menuIcon.textContent = '☰';
+            }
+        });
     </script>
 </body>
 </html>
